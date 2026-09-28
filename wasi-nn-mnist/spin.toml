@@ -1,0 +1,16 @@
+spin_manifest_version = 2
+
+[application]
+name = "wasi-nn-mnist"
+version = "0.1.0"
+description = "Classifies handwritten digits with the ONNX model-zoo MNIST-12 network through wasi:nn."
+
+[[trigger.http]]
+route = "/..."
+component = "mnist"
+
+[component.mnist]
+source = "target/wasm32-wasip2/release/wasi_nn_mnist.wasm"
+[component.mnist.build]
+command = "cargo build --target wasm32-wasip2 --release"
+watch = ["src/**/*.rs", "Cargo.toml", "wit/**/*.wit", "model/*.onnx"]

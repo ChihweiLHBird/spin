@@ -1,0 +1,15 @@
+spin_manifest_version = 2
+
+[application]
+name = "wasi-nn-smoke"
+description = "Calls wasi:nn graph::load with junk bytes to prove the host import is linked."
+
+[[trigger.http]]
+route = "/infer"
+component = "smoke"
+
+[component.smoke]
+source = "target/wasm32-wasip2/release/wasi_nn_smoke.wasm"
+[component.smoke.build]
+command = "cargo build --target wasm32-wasip2 --release"
+watch = ["src/**/*.rs", "Cargo.toml", "wit/**/*.wit"]

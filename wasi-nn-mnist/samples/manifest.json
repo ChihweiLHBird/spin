@@ -1,0 +1,62 @@
+[
+ {
+  "file": "digit-0-idx3.png",
+  "label": 0,
+  "test_index": 3,
+  "mean": 0.18514405762304922
+ },
+ {
+  "file": "digit-1-idx2.png",
+  "label": 1,
+  "test_index": 2,
+  "mean": 0.049374749899959984
+ },
+ {
+  "file": "digit-2-idx1.png",
+  "label": 2,
+  "test_index": 1,
+  "mean": 0.1443077230892357
+ },
+ {
+  "file": "digit-3-idx18.png",
+  "label": 3,
+  "test_index": 18,
+  "mean": 0.1772358943577431
+ },
+ {
+  "file": "digit-4-idx4.png",
+  "label": 4,
+  "test_index": 4,
+  "mean": 0.0962234893957583
+ },
+ {
+  "file": "digit-5-idx8.png",
+  "label": 5,
+  "test_index": 8,
+  "mean": 0.1537314925970388
+ },
+ {
+  "file": "digit-6-idx11.png",
+  "label": 6,
+  "test_index": 11,
+  "mean": 0.13873049219687875
+ },
+ {
+  "file": "digit-7-idx0.png",
+  "label": 7,
+  "test_index": 0,
+  "mean": 0.09230692276910764
+ },
+ {
+  "file": "digit-8-idx61.png",
+  "label": 8,
+  "test_index": 61,
+  "mean": 0.16046918767507
+ },
+ {
+  "file": "digit-9-idx7.png",
+  "label": 9,
+  "test_index": 7,
+  "mean": 0.10535214085634254
+ }
+]

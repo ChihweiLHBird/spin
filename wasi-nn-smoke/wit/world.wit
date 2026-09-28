@@ -1,0 +1,6 @@
+package local:wasi-nn-smoke;
+
+/// HTTP guest that imports `wasi:nn` so a junk `graph::load` can prove host linking.
+world smoke {
+    include wasi:nn/ml@0.2.0-rc-2024-10-28;
+}

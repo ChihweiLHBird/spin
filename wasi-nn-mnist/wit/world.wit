@@ -1,0 +1,6 @@
+package local:wasi-nn-mnist;
+
+/// The extra imports this guest needs beyond what spin-sdk provides: the four `wasi:nn` interfaces.
+world mnist {
+    include wasi:nn/ml@0.2.0-rc-2024-10-28;
+}

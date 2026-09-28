@@ -1,0 +1,16 @@
+[package]
+name = "wasi-nn-mnist"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+spin-sdk = "7.0.0"
+wit-bindgen = "0.61.1"
+
+# Own workspace so this guest is not a member of the Spin workspace.
+[workspace]
