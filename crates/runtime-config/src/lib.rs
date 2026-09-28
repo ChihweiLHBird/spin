@@ -16,6 +16,7 @@ use spin_factor_outbound_redis::OutboundRedisFactor;
 use spin_factor_sqlite::SqliteFactor;
 use spin_factor_variables::VariablesFactor;
 use spin_factor_wasi::WasiFactor;
+use spin_factor_wasi_nn::WasiNnFactor;
 use spin_factors::runtime_config::toml::GetTomlValue as _;
 use spin_factors::{
     FactorRuntimeConfigSource, RuntimeConfigSourceFinalizer, runtime_config::toml::TomlKeyTracker,
@@ -417,6 +418,13 @@ impl FactorRuntimeConfigSource<OutboundRedisFactor> for TomlRuntimeConfigSource<
 }
 
 impl FactorRuntimeConfigSource<WasiFactor> for TomlRuntimeConfigSource<'_, '_> {
+    fn get_runtime_config(&mut self) -> anyhow::Result<Option<()>> {
+        Ok(None)
+    }
+}
+
+
+impl FactorRuntimeConfigSource<WasiNnFactor> for TomlRuntimeConfigSource<'_, '_> {
     fn get_runtime_config(&mut self) -> anyhow::Result<Option<()>> {
         Ok(None)
     }

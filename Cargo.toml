@@ -127,6 +127,10 @@ llm-cublas = ["llm", "spin-runtime-factors/llm-cublas"]
 # This enables the collection and emission CPU time elapsed per component execution.
 cpu-time-metrics = ["spin-factors-executor/cpu-time-metrics"]
 experimental-wasm-features = ["spin-trigger/experimental-wasm-features"]
+wasi-nn-onnx = ["spin-runtime-factors/wasi-nn-onnx"]
+wasi-nn-onnx-cuda = ["spin-runtime-factors/wasi-nn-onnx-cuda"]
+wasi-nn-openvino = ["spin-runtime-factors/wasi-nn-openvino"]
+wasi-nn-pytorch = ["spin-runtime-factors/wasi-nn-pytorch"]
 
 [workspace]
 members = [
@@ -212,6 +216,7 @@ wasmparser = "0.258.0"
 wasmtime = "49.0.1"
 wasmtime-wasi = { version = "49.0.1", features = ["p3"] }
 wasmtime-wasi-http = { version = "49.0.1", features = ["p3", "component-model-async"] }
+wasmtime-wasi-nn = { version = "49.0.0", default-features = false }
 wit-component = "0.258.0"
 wit-parser = "0.258.0"
 
