@@ -12,6 +12,10 @@ rust-version.workspace = true
 llm = ["spin-factor-llm/llm"]
 llm-metal = ["spin-factor-llm/llm-metal"]
 llm-cublas = ["spin-factor-llm/llm-cublas"]
+wasi-nn-onnx = ["spin-factor-wasi-nn/onnx"]
+wasi-nn-onnx-cuda = ["spin-factor-wasi-nn/onnx-cuda"]
+wasi-nn-openvino = ["spin-factor-wasi-nn/openvino"]
+wasi-nn-pytorch = ["spin-factor-wasi-nn/pytorch"]
 
 [dependencies]
 anyhow = { workspace = true }
@@ -29,6 +33,7 @@ spin-factor-outbound-redis = { path = "../factor-outbound-redis" }
 spin-factor-sqlite = { path = "../factor-sqlite" }
 spin-factor-variables = { path = "../factor-variables" }
 spin-factor-wasi = { path = "../factor-wasi" }
+spin-factor-wasi-nn = { path = "../factor-wasi-nn" }
 spin-factors = { path = "../factors" }
 spin-factors-executor = { path = "../factors-executor" }
 spin-runtime-config = { path = "../runtime-config" }

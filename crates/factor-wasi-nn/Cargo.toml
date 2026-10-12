@@ -1,0 +1,28 @@
+[package]
+name = "spin-factor-wasi-nn"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+onnx = ["wasmtime-wasi-nn/onnx", "wasmtime-wasi-nn/onnx-download"]
+onnx-cuda = ["onnx", "wasmtime-wasi-nn/onnx-cuda"]
+openvino = ["wasmtime-wasi-nn/openvino"]
+pytorch = ["wasmtime-wasi-nn/pytorch"]
+
+[dependencies]
+anyhow = { workspace = true }
+spin-factors = { path = "../factors" }
+wasmtime = { workspace = true }
+wasmtime-wasi-nn = { workspace = true }
+
+[dev-dependencies]
+spin-factors-test = { path = "../factors-test" }
+tokio = { workspace = true, features = ["macros", "rt"] }
+
+[lints]
+workspace = true

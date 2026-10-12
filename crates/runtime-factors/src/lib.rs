@@ -23,11 +23,13 @@ use spin_factor_wasi::{WasiFactor, spin::SpinFilesMounter};
 use spin_factors::RuntimeFactors;
 use spin_runtime_config::{ResolvedRuntimeConfig, TomlRuntimeConfigSource};
 use spin_variables_static::VariableSource;
+use spin_factor_wasi_nn::WasiNnFactor;
 
 #[derive(RuntimeFactors)]
 pub struct TriggerFactors {
     pub otel: OtelFactor,
     pub wasi: WasiFactor,
+    pub nn: WasiNnFactor,
     pub variables: VariablesFactor,
     pub key_value: KeyValueFactor,
     pub outbound_networking: OutboundNetworkingFactor,
@@ -51,6 +53,7 @@ impl TriggerFactors {
         Ok(Self {
             otel: OtelFactor::new(spin_version, experimental_wasi_otel)?,
             wasi: wasi_factor(working_dir, allow_transient_writes),
+            nn: WasiNnFactor::new(),
             variables: VariablesFactor::default(),
             key_value: KeyValueFactor::new(),
             outbound_networking: outbound_networking_factor(),

@@ -20,8 +20,6 @@ world platform {
   import wasi:http/outgoing-handler@0.2.6;
   import wasi:http/client@0.3.0-rc-2026-03-15;
   import wasi:http/client@0.3.0;
-  @unstable(feature = wasi-otel)
-  include wasi:otel/imports@0.2.0-rc.2;
   include fermyon:spin/platform@2.0.0;
   include wasi:keyvalue/imports@0.2.0-draft2;
   import spin:key-value/key-value@3.0.0;
@@ -33,4 +31,10 @@ world platform {
   import spin:sqlite/sqlite@3.1.0;
   import spin:variables/variables@3.0.0;
   import wasi:config/store@0.2.0-draft-2024-09-27;
+
+  @unstable(feature = wasi-otel)
+  include wasi:otel/imports@0.2.0-rc.2;
+
+  @unstable(feature = wasi-nn)
+  include wasi:nn/ml@0.2.0-rc-2024-10-28;
 }
